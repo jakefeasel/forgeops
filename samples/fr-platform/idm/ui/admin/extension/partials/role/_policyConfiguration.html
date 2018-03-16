@@ -1,0 +1,31 @@
+<h3>Resource</h3>
+<select name="resource">
+    {{#each managedObjects}}
+    <option>{{this}}</option>
+    {{/each}}
+</select>
+
+
+<hr>
+
+<h3>Editable Fields</h3>
+
+<ul id="fieldsList">
+    {{#each managedObjectProperties}}
+    <li><input type="checkbox" name="allowedFields" value="{{name}}" {{#if checked}} checked{{/if}}> - {{name}}</li>
+    {{/each}}
+</ul>
+
+
+<hr>
+
+<h3>Scope Filtering Policy Attribute</h3>
+<input type="text" name="scopingAttribute" value="{{scopingAttribute}}">
+
+
+<hr>
+
+
+<h3>Scope Query Filter</h3>
+
+<div class="col-sm-10 filter-form form-horizontal" id="scopeResourceQueryFilterHolder"></div>

@@ -1,0 +1,39 @@
+{{!
+Copyright 2018 ForgeRock AS. All Rights Reserved
+
+Use of this code requires a commercial software license with ForgeRock AS.
+or with one of its affiliates. All use shall be exclusively subject
+to such license between the licensee and ForgeRock AS.
+}}
+<form id="rolePolicyForm" class="form" autocomplete="off">
+    <div id="rolePolicyBody" class="panel-body">
+        <div class="group-body">
+            <p class="panel-description">
+                Configure AM authorization policies for IDM, associated with this role
+            </p>
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="all-check col-sm-3 control-label">{{t "common.form.enable"}}</label>
+                    <div class="col-sm-6">
+                        <div class="checkbox checkbox-slider-primary checkbox-slider checkbox-slider--b checkbox-slider-md">
+                            <label>
+                                <input name="enabled" value="true" type="checkbox" {{#if enabled}} checked {{/if}}><span></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="group-body {{#unless enabled}} hidden {{/unless}}" id="policyConfiguration" >
+            {{partial "role/_policyConfiguration" this}}
+        </div>
+    </div>
+
+    <div class="panel-footer">
+        <div class="clearfix form-button-bar">
+            <input type="submit" class="btn btn-primary pull-right" id="savePolicies" value="{{t "common.form.save"}}"/>
+        </div>
+    </div>
+</form>

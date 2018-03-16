@@ -7,8 +7,7 @@
         "passwordResetLink" : "",
         "roles" : {
             "openidm-authorized" : "ui-user",
-            "openidm-admin" : "ui-admin",
-            "openidm-del-admin" : "ui-admin"
+            "openidm-admin" : "ui-admin"
         },
         "notificationTypes" : {
             "info" : {

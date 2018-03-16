@@ -18,6 +18,8 @@ spec:
       env:
       - name: IDM_ENVCONFIG_DIRS
         value: /opt/openidm/resolver
+      - name: AM_REALM_ENDPOINT
+        value: "http://am-service.sample.svc.cluster.local/openam/json/"
       - name: OPENIDM_CLUSTER_REMOVE_OFFLINE_NODE_STATE
         value: "true"
       - name: OPENIDM_CONFIG_REPO_ENABLED

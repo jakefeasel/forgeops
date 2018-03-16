@@ -32,7 +32,7 @@ define([
                 configuration: {
                     "resource-assignment" : "org/forgerock/openidm/ui/admin/assignment/AssignmentView",
                     "resource-user" : "org/forgerock/openidm/ui/admin/custom/EditUserView",
-                    "resource-role" : "org/forgerock/openidm/ui/admin/role/EditRoleView"
+                    "resource-role" : "org/forgerock/openidm/ui/admin/custom/EditRoleView"
                 }
             },
             {
@@ -139,6 +139,10 @@ define([
                                                 {
                                                     "method": "POST",
                                                     "path": "system?_action=test"
+                                                },
+                                                {
+                                                    "method": "POST",
+                                                    "path": "system?_action=availableConnectors"
                                                 }
                                             ]
                                         },

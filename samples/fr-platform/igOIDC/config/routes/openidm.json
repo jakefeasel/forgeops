@@ -213,7 +213,7 @@
                   "config": {
                         "openamUrl": "${env['OPENAM_INSTANCE']}",
                         "cache": {
-                            "enabled": true,
+                            "enabled": false,
                             "defaultTimeout": "1 hour",
                             "maxTimeout": "1 day"
                         },
@@ -229,20 +229,6 @@
                             "securityContextRoles": "${session.idmUserDetails.authorization.roles}"
                         },
                         "failureHandler": "authzFailureResponse"
-                    }
-                },
-                {
-                    "name": "ScopeValidation",
-                    "type": "ScriptableFilter",
-                    "config": {
-                        "clientHandler": "IDMClient",
-                        "type": "application/x-groovy",
-                        "file": "scopeValidation.groovy",
-                        "args": {
-                            "scopeResourceQueryFilter": "/organizationName eq \"\\${organizationName}\"",
-                            "scopingAttribute": "organizationName",
-                            "failureResponse": "${heap['authzFailureResponse']}"
-                        }
                     }
                 },
                 {
