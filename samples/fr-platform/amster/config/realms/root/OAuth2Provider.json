@@ -68,7 +68,7 @@
       "dynamicClientRegistrationScope" : "dynamic_client_registration",
       "requiredSoftwareStatementAttestedAttributes" : [ "redirect_uris" ],
       "generateRegistrationAccessTokens" : true,
-      "allowDynamicRegistration" : false
+      "allowDynamicRegistration" : true
     },
     "consent" : {
       "enableRemoteConsent" : false,
