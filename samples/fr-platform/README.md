@@ -74,10 +74,9 @@ If you don't want to use Facebook, the default values of "FakeID" and "FakeSecre
 
     If you are using minikube, use these commands:
     ```
-    grep -v client-service.sample.svc.cluster.local /etc/hosts \
+    grep -v rs-service.sample.svc.cluster.local /etc/hosts \
     | sudo tee /etc/hosts && \
     echo "$(minikube ip) \
-        client-service.sample.svc.cluster.local \
         openam.sample.svc.cluster.local \
         rs-service.sample.svc.cluster.local" \
     | sudo tee -a /etc/hosts
@@ -85,11 +84,10 @@ If you don't want to use Facebook, the default values of "FakeID" and "FakeSecre
 
     If your cluster is available directly, you can use these commands instead:
     ```
-    grep -v client-service.sample.svc.cluster.local /etc/hosts \
+    grep -v rs-service.sample.svc.cluster.local /etc/hosts \
     | sudo tee /etc/hosts && \
     echo "$( kubectl get ing -o \
         jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}' ) \
-        client-service.sample.svc.cluster.local \
         openam.sample.svc.cluster.local \
         rs-service.sample.svc.cluster.local" \
     | sudo tee -a /etc/hosts
@@ -103,10 +101,10 @@ If you don't want to use Facebook, the default values of "FakeID" and "FakeSecre
 
     When all pods report that they are in a ready state, hit Ctrl^C to exit.
 
-6. You can access the application by opening this URL:
+6. You can access the platform by opening this URL:
 
     ```
-    http://client-service.sample.svc.cluster.local
+    http://openam.sample.svc.cluster.local/openam/console
     ```
 
     You can use amadmin / password to login.
