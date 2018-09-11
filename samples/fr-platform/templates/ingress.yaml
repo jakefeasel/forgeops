@@ -5,11 +5,11 @@ metadata:
   namespace: sample
 spec:
   rules:
-  - host: am-service.sample.svc.cluster.local
+  - host: openam.sample.svc.cluster.local
     http:
       paths:
       - backend:
-          serviceName: am-service
+          serviceName: openam
           servicePort: 80
   - host: client-service.sample.svc.cluster.local
     http:

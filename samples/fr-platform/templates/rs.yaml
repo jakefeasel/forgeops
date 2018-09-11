@@ -15,7 +15,7 @@ spec:
           memory: "128Mi"
     env:
     - name: WELL_KNOWN_ENDPOINT
-      value: "http://am-service.sample.svc.cluster.local/openam/oauth2/.well-known/openid-configuration"
+      value: "http://openam.sample.svc.cluster.local/openam/oauth2/.well-known/openid-configuration"
     command:
     - /wellKnownCheck.sh
   containers:
@@ -31,7 +31,7 @@ spec:
             memory: "128Mi"
       env:
       - name: OPENAM_INSTANCE
-        value: "http://am-service.sample.svc.cluster.local/openam"
+        value: "http://openam.sample.svc.cluster.local/openam"
 ---
 kind: Service
 apiVersion: v1

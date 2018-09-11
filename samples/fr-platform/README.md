@@ -14,7 +14,7 @@ Docker, Kubernetes and Helm are used to automate the deployment of this sample. 
 If you want to enable Facebook for social registration and login, you will need to register an application within Facebook. You will need to make sure your Facebook App has these redirect urls registered:
 
     http://client-service.sample.svc.cluster.local/oauthReturn/
-    http://am-service.sample.svc.cluster.local/openam
+    http://openam.sample.svc.cluster.local/openam
 
 Save the App Id and Secret as environment variables, like so:
 
@@ -78,7 +78,7 @@ If you don't want to use Facebook, the default values of "FakeID" and "FakeSecre
     | sudo tee /etc/hosts && \
     echo "$(minikube ip) \
         client-service.sample.svc.cluster.local \
-        am-service.sample.svc.cluster.local \
+        openam.sample.svc.cluster.local \
         rs-service.sample.svc.cluster.local" \
     | sudo tee -a /etc/hosts
     ```
@@ -90,7 +90,7 @@ If you don't want to use Facebook, the default values of "FakeID" and "FakeSecre
     echo "$( kubectl get ing -o \
         jsonpath='{.items[0].status.loadBalancer.ingress[0].ip}' ) \
         client-service.sample.svc.cluster.local \
-        am-service.sample.svc.cluster.local \
+        openam.sample.svc.cluster.local \
         rs-service.sample.svc.cluster.local" \
     | sudo tee -a /etc/hosts
     ```
@@ -154,7 +154,7 @@ To make the internal DJ cluster accessible locally:
 To export changes made to AM:
 
     kubectl exec -it amster /opt/amster/amster
-      connect http://am-service.sample.svc.cluster.local/openam -k /var/run/secrets/amster/id_rsa
+      connect http://openam.sample.svc.cluster.local/openam -k /var/run/secrets/amster/id_rsa
       export-config --path /tmp/export
       :quit
 
